@@ -11,7 +11,7 @@
      name: "{{ item }}"
      state: present
     loop:
-     - mariadb, 
+     - mariadb
      - python3-PyMySQL
   - name:  Activation Mariadb
     systemd:
