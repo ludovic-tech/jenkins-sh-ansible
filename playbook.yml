@@ -1,5 +1,12 @@
 ---
+- hosts: localhost
 
+  tasks:
+  - name: ajout .my.cnf conf mariadb
+    copy:
+     src: .my.cnf
+     dest: /root/.my.cnf
+    
 - hosts: web
   
   vars:
