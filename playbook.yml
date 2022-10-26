@@ -5,6 +5,7 @@
   vars:
    mysql_root_user: 'root'
    mysql_root_password: ''
+   mariadb_host: "10.0.0.52"
 
   tasks:
   - name: installation Mariadb
@@ -22,6 +23,7 @@
      enabled: yes
   - name: Ajout du user mariadb 'ludo' avec  password '12345'  et tout privileges
     mysql_user:
+     login_host: "{{ mariadb_host }}"
      login_user: "{{ mysql_root_user }}" 
      login_password: "{{ mysql_root_password }}"        
      name: ludo
