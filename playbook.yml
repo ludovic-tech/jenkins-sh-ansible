@@ -11,11 +11,17 @@
      name: "{{ item }}"
      state: present
     loop:
-      - mariadb, 
-      - python3-PyMySQL
-
+     - mariadb
+     - python3-PyMySQL
+     - mariadb-server
   - name:  Activation Mariadb
     systemd:
      name: mariadb
      state: started
      enabled: yes
+  - name: Ajout du user mariadb 'ludo' avec  password '12345'  et tout privileges
+    mysql_user:
+    name: ludo
+    password: 12345
+    priv: '*.*:ALL'
+    state: present

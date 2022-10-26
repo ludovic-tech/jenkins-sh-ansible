@@ -3,6 +3,6 @@ node{
           checkout scm
       }
       stage('install_mariadb') {
-	sh "ansible-playbook -i inventaire playbook.yaml"
+	sh "ansible-playbook -i inventaire playbook.yml"
       }
 }
