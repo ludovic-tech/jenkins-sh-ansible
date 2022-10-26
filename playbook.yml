@@ -1,0 +1,19 @@
+---
+
+- hosts: web
+  
+  vars:
+   root_password: 'root'
+
+  tasks:
+  - name: installation Mariadb
+    dnf:
+     name: 
+       - mariadb, 
+       - python3-PyMySQL
+     state: present
+  - name:  Activation Mariadb
+    systemd:
+     name: mariadb
+     state: started
+     enabled: yes
