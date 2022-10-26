@@ -1,0 +1,5 @@
+---
+# vars file for mariadb
+root_password:
+    - rootroot
+
