@@ -1,11 +1,5 @@
 ---
-- hosts: localhost
 
-  tasks:
-  - name: ajout .my.cnf conf mariadb
-    copy:
-     src: .my.cnf
-     dest: /root/.my.cnf
     
 - hosts: web
   
@@ -28,6 +22,10 @@
      name: mariadb
      state: started
      enabled: yes
+  - name: ajout .my.cnf conf mariadb
+    copy:
+     src: .my.cnf
+     dest: /root/.my.cnf
   - name: Ajout du user mariadb 'ludo' avec  password '12345'  et tout privileges
     mysql_user:
      login_host: "{{ mariadb_host }}"
