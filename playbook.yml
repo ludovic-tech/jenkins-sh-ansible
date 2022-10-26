@@ -21,7 +21,7 @@
      enabled: yes
   - name: Ajout du user mariadb 'ludo' avec  password '12345'  et tout privileges
     mysql_user:
-    name: ludo
-    password: 12345
-    priv: '*.*:ALL'
-    state: present
+     name: ludo
+     password: 12345
+     priv: '*.*:ALL'
+     state: present
